@@ -22,7 +22,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-          <p className='elf'>State: {this.state.nine}</p>
+          <p className='nine'>State: {this.state.nine}</p>
           <button className='elf' onClick={this.getNine}>Get Nine</button>
       </div>
     );

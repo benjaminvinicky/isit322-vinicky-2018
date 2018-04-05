@@ -24,4 +24,12 @@ describe('jest test', function() {
         expect(wrapper.contains(welcome)).toEqual(true);
     });
 
+    it('renders button click message', () => {
+        const wrapper = shallow(<App />);
+        const nineSign = <p className='nine'>State: 9</p>;
+        elfDebugEnzyme.getFirst(wrapper, 'p', true);
+        wrapper.find('button.elf').simulate('click');
+        expect(wrapper.contains(nineSign)).toEqual(true);
+    });
+
 });
