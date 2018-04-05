@@ -7,4 +7,4 @@ platforms
 Thumbs.db
 *.zip
 npm-debug.log
-
+.idea
