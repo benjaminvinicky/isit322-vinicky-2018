@@ -12,10 +12,7 @@
 
     // override default options for rules from base configurations
     "comma-dangle": ["off", "always"],
-    "no-cond-assign": ["error", "always"],
-
-    // disable rules from base configurations
-    "no-console": "off"
+    "no-cond-assign": ["error", "always"]
   },
   "parserOptions": {
     "ecmaVersion": 7,
@@ -25,7 +22,11 @@
     }
   },
   "env": {
-    "browser": true,
-    "node": true
-  }
+        "amd": true,
+        "browser": true,
+        "es6": true,
+        "jest": true,
+        "node": true,
+        "jquery": true
+    }
 }
