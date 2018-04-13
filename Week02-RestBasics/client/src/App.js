@@ -7,6 +7,7 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
+            foo: '',
             file: 'File name will be placed here.',
             status: 'waiting for server'
         };
@@ -35,9 +36,13 @@ class App extends Component {
             <h2>Welcome to React</h2>
         </div>
 
+        <p className="App-intro">foo: {this.state.foo}</p>
         <p className="App-intro">
-            state: {this.state.status} file: {this.state.file}
-    </p>
+            state: {this.state.status}
+        </p>
+        <p className="App-intro">
+            file: {this.state.file}
+        </p>
         <button onClick={this.queryServer}>Bar</button>
         </div>
     );
