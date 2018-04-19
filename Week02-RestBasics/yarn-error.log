@@ -1,0 +1,60 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js build
+
+PATH: 
+  /home/bcuser/Android/Sdk/tools:/home/bcuser/Android/Sdk/platform-tools:/home/bcuser/npm/bin:/home/bcuser/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.10.1
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "name": "lookup-server",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+      "babel-cli": "6.26.0",
+      "babel-core": "6.26.0",
+      "express": "4.16.3"
+    },
+    "scripts": {
+      "start": "concurrently 'npm run server' 'npm run client'",
+      "server": "babel-node server/bin/www",
+      "client": "babel-node start-client.js",
+      "lint": "eslint ."
+    },
+    "devDependencies": {
+      "babel-eslint": "^8.2.2",
+      "concurrently": "^3.5.1",
+      "eslint": "4.19.1",
+      "eslint-config-google": "^0.9.1",
+      "eslint-plugin-import": "2.11.0",
+      "eslint-plugin-jsx-a11y": "6.0.3",
+      "eslint-plugin-react": "7.7.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command "build" not found.
+      at new MessageError (/usr/share/yarn/lib/cli.js:186:110)
+      at /usr/share/yarn/lib/cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:98:30)
+      at /usr/share/yarn/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/usr/share/yarn/lib/cli.js:23451:28)
+      at /usr/share/yarn/lib/cli.js:95:12
+      at runCommand (/usr/share/yarn/lib/cli.js:87312:22)
+      at Object.<anonymous> (/usr/share/yarn/lib/cli.js:87412:14)
