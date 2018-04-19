@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './images/Tree-of-Life_Flower-of-Life_Stage.svg';
+import './css/App.css';
 import 'whatwg-fetch';
 
 class App extends Component {
