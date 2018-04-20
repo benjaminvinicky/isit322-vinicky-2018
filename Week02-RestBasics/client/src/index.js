@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import Micros from './Micros'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <div>
+        <App />
+        <Micros />
+    </div>,
+    document.getElementById('root'));
 registerServiceWorker();
