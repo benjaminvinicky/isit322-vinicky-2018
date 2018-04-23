@@ -8,4 +8,23 @@ router.get('/foo', function(request, response) {
     response.send(message);
 });
 
+router.get('/user', function(req, res, next) {
+    const options = {
+        url: 'https://api.github.com/users/charliecalvert',
+        headers: {
+            'User-Agent': 'request'
+        }
+    };
+
+    request(options, function(error, response, body) {
+        console.log('error:', error);
+        console.log('statusCode:', response && response.statusCode);
+        console.log('body:', body);
+        const jsonBody = JSON.parse(body);
+        console.log('body:', JSON.stringify(body, null, 4));
+        res.send({error: error, response: response, body: jsonBody});
+    });
+
+});
+
 module.exports = router;

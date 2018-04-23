@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
-import logo from './images/Tree.svg';
-import './css/App.css';
+import logo from '../images/Tree.svg';
+import '../css/App.css';
 import 'whatwg-fetch';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             foo: '',
+            file: props.appInit.file,
+            status: props.appInit.status,
+            result: props.appInit.result
         };
     }
 
