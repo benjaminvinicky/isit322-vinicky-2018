@@ -12,13 +12,13 @@ class Micro1 extends Component {
 
     queryMicroYouRang = () => {
         const that = this;
-        fetch('/bar')
+        fetch('/api/bar')
             .then(function(response) {
                 return response.json();
             })
             .then(function(json) {
                 console.log('parsed json', json);
-                that.setState( youRang => (json));
+                that.setState((json));
             })
             .catch(function(ex) {
                 console.log('parsing failed, URL bad, network down, or similar', ex);
@@ -29,7 +29,7 @@ class Micro1 extends Component {
         return (
             <div className="App">
                 <p className="App-intro">You Rang: {this.state.youRang}</p>
-                <button onClick={this.queryServer}>Query Micro</button>
+                <button onClick={this.queryMicroYouRang}>Query Micro</button>
             </div>
         );
     }
