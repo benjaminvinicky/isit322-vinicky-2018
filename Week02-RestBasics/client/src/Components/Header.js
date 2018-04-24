@@ -3,11 +3,7 @@ import logo from '../images/Tree.svg';
 import '../css/App.css';
 import 'whatwg-fetch';
 
-class App extends Component {
-    constructor() {
-        super();
-    }
-
+class Header extends Component {
     render() {
         return (
             <div className="App">
@@ -20,4 +16,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Header;

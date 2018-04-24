@@ -2,25 +2,23 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
 
-class App extends Component {
+class Micro1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            file: props.appInit.file,
-            status: props.appInit.status,
-            result: props.appInit.result
+            youRang: props.appInit.youRang
         };
     }
 
-    queryServer = () => {
+    queryMicroYouRang = () => {
         const that = this;
-        fetch('/api/foo')
+        fetch('/bar')
             .then(function(response) {
                 return response.json();
             })
             .then(function(json) {
                 console.log('parsed json', json);
-                that.setState((json));
+                that.setState( youRang => (json));
             })
             .catch(function(ex) {
                 console.log('parsing failed, URL bad, network down, or similar', ex);
@@ -30,13 +28,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <p className="App-intro">state: {this.state.result}</p>
-                <p className="App-intro">file: {this.state.file}</p>
-                <p className="App-intro">result: {this.state.status}</p>
-                <button onClick={this.queryServer}>Query API</button>
+                <p className="App-intro">You Rang: {this.state.youRang}</p>
+                <button onClick={this.queryServer}>Query Micro</button>
             </div>
         );
     }
 }
 
-export default App;
+export default Micro1;

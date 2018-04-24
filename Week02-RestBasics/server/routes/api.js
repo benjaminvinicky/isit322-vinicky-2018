@@ -1,16 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var request = require('request');
 
 /* Set up a route called foo. */
 router.get('/foo', function(request, response) {
-    var message = { 'status': 'success', 'foo': 'bar', 'file': 'api.js' };
+    var message = { 'status': 'success', 'result': 'bar', 'file': 'api.js' };
+    console.log('Foo called:\n' + JSON.stringify(message, null, 4));
+    response.send(message);
+});
+
+router.get('/bar', function(request, response) {
+    var message = { 'youRang': 'Hello' };
     console.log('Foo called:\n' + JSON.stringify(message, null, 4));
     response.send(message);
 });
 
 router.get('/user', function(req, res, next) {
     const options = {
-        url: 'https://api.github.com/users/charliecalvert',
+        url: 'https://api.github.com/users/benjaminvinicky',
         headers: {
             'User-Agent': 'request'
         }
