@@ -15,14 +15,14 @@ class App extends Component {
     queryServer = () => {
         const that = this;
         fetch('/api/foo')
-            .then(function(response) {
+            .then(function (response) {
                 return response.json();
             })
-            .then(function(json) {
+            .then(function (json) {
                 console.log('parsed json', json);
                 that.setState((json));
             })
-            .catch(function(ex) {
+            .catch(function (ex) {
                 console.log('parsing failed, URL bad, network down, or similar', ex);
             });
     };

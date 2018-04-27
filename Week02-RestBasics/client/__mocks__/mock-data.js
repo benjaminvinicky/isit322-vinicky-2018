@@ -1,24 +1,24 @@
-const mockData = (url) => {
+const getData = (url) => {
     switch (url) {
-    case '/api/foo':
-        return {
-            foo: 'bar',
-            file: 'api.js'
-        };
+        case '/api/foo':
+            return {
+                status: 'Mock Server Happy',
+                file: 'api.js',
+                result: 'success'
+            };
 
-    case '/api/user':
-        return {
-            error: {},
-            response: {},
-            body: JSON.stringify({
-                login: 'Robin Dudette'
-            })
-        };
+        case '/api/user':
+            return {
+                error: {},
+                response: {},
+                body: JSON.stringify({
+                    login: 'Robin Dudette'
+                })
+            };
 
-    default:
-        return {};
+        default:
+            return {}
     }
 };
 
-export default mockData;
-
+export default getData;

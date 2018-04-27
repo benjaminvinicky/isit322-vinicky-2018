@@ -1360,7 +1360,7 @@ As of Enzyme 3, you will need to install Enzyme along with an Adapter correspond
 
 The adapter will also need to be configured in your [global setup file](#initializing-test-environment):
 
-#### `src/setupTests.js`
+#### `src/setupTests.js.js`
 ```js
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -1368,7 +1368,7 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 ```
 
->Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js`, the resulting `package.json` file won't contain any reference to it. [Read here](#initializing-test-environment) to learn how to add this after ejecting.
+>Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js.js`, the resulting `package.json` file won't contain any reference to it. [Read here](#initializing-test-environment) to learn how to add this after ejecting.
 
 Now you can write a smoke test with it:
 
@@ -1422,7 +1422,7 @@ Alternatively you may use `yarn`:
 yarn add jest-enzyme
 ```
 
-Import it in [`src/setupTests.js`](#initializing-test-environment) to make its matchers available in every test:
+Import it in [`src/setupTests.js.js`](#initializing-test-environment) to make its matchers available in every test:
 
 ```js
 import 'jest-enzyme';
@@ -1445,11 +1445,11 @@ and then use them in your tests like you normally do.
 
 >Note: this feature is available with `react-scripts@0.4.0` and higher.
 
-If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.js` to your project. It will be automatically executed before running your tests.
+If your app uses a browser API that you need to mock in your tests or if you just need a global setup before running your tests, add a `src/setupTests.js.js` to your project. It will be automatically executed before running your tests.
 
 For example:
 
-#### `src/setupTests.js`
+#### `src/setupTests.js.js`
 ```js
 const localStorageMock = {
   getItem: jest.fn(),
@@ -1459,12 +1459,12 @@ const localStorageMock = {
 global.localStorage = localStorageMock
 ```
 
->Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js`, the resulting `package.json` file won't contain any reference to it, so you should manually create the property `setupTestFrameworkScriptFile` in the configuration for Jest, something like the following:
+>Note: Keep in mind that if you decide to "eject" before creating `src/setupTests.js.js`, the resulting `package.json` file won't contain any reference to it, so you should manually create the property `setupTestFrameworkScriptFile` in the configuration for Jest, something like the following:
 
 >```js
 >"jest": {
 >   // ...
->   "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+>   "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js.js"
 >  }
 >  ```
 

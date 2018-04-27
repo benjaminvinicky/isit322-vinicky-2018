@@ -14,14 +14,14 @@ class GitUser extends Component {
     queryGitAPIUser = () => {
         const that = this;
         fetch('/api/user')
-            .then(function(response) {
+            .then(function (response) {
                 return response.json();
             })
-            .then(function(json) {
+            .then(function (json) {
                 console.log('parsed json', json.body);
-                that.setState( {name: json.body.name, pic: json.body.avatar_url});
+                that.setState({name: json.body.name, pic: json.body.avatar_url});
             })
-            .catch(function(ex) {
+            .catch(function (ex) {
                 console.log('parsing failed, URL bad, network down, or similar', ex);
             });
     };
@@ -30,8 +30,8 @@ class GitUser extends Component {
         return (
             <div className="App">
                 <p className="App-intro">Login: {this.state.name}</p>
-                <img className="App-intro, App-avatar" src={this.state.pic} alt={this.state.pic} />
-                <br />
+                <img className="App-intro, App-avatar" src={this.state.pic} alt={this.state.pic}/>
+                <br/>
                 <button onClick={this.queryGitAPIUser}>Query Git API</button>
             </div>
         );
