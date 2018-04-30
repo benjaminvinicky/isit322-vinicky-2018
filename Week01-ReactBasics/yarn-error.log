@@ -1,0 +1,63 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /home/bcuser/Android/Sdk/tools:/home/bcuser/Android/Sdk/platform-tools:/home/bcuser/npm/bin:/home/bcuser/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  9.11.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
+
+npm manifest: 
+  {
+    "name": "react-basics",
+    "version": "1.0.0",
+    "description": "react basics examples",
+    "main": "main.js",
+    "scripts": {
+      "start": "node_modules/.bin/webpack-dev-server",
+      "build": "node_modules/.bin/webpack",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/benjaminvinicky/isit322-vinicky-2018.git"
+    },
+    "keywords": [
+      "react"
+    ],
+    "author": "Benjamin Vinicky",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/benjaminvinicky/isit322-vinicky-2018/issues"
+    },
+    "homepage": "https://github.com/benjaminvinicky/isit322-vinicky-2018#readme",
+    "dependencies": {
+      "react": "^16.3.0",
+      "react-dom": "^16.3.0",
+      "webpack": "^4.4.1"
+    },
+    "devDependencies": {
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.4",
+      "babel-preset-env": "^1.6.1",
+      "babel-preset-react": "^6.24.1",
+      "webpack-cli": "^2.0.13",
+      "webpack-dev-server": "^3.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
