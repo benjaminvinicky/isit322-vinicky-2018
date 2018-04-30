@@ -12,8 +12,14 @@ const getData = (url) => {
                 error: {},
                 response: {},
                 body: JSON.stringify({
-                    login: 'Robin Dudette'
+                    login: 'Benjamin Vinicky',
+                    pic: 'myURL'
                 })
+            };
+
+        case '/api/bar':
+            return {
+                youRang: 'Hello'
             };
 
         default:

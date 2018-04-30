@@ -32,8 +32,8 @@ class App extends Component {
             <div className="App">
                 <p className="App-intro">state: {this.state.result}</p>
                 <p className="App-intro">file: {this.state.file}</p>
-                <p className="App-intro">result: {this.state.status}</p>
-                <button onClick={this.queryServer}>Query API</button>
+                <p className="App-intro">status: {this.state.status}</p>
+                <button id='queryServer' onClick={this.queryServer}>Query API</button>
             </div>
         );
     }

@@ -29,7 +29,7 @@ class Micro1 extends Component {
         return (
             <div className="App">
                 <p className="App-intro">You Rang: {this.state.youRang}</p>
-                <button onClick={this.queryMicroYouRang}>Query Micro</button>
+                <button id='callButton' onClick={this.queryMicroYouRang}>Query Micro</button>
             </div>
         );
     }

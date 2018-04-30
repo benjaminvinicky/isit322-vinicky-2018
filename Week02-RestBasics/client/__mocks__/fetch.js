@@ -1,3 +1,7 @@
+import getData from './mock-data';
+
+'use strict'
+
 const elfFetch = (url) => {
     return new Promise((resolve) => {
         resolve({

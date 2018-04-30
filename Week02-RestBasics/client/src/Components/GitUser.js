@@ -30,9 +30,9 @@ class GitUser extends Component {
         return (
             <div className="App">
                 <p className="App-intro">Login: {this.state.name}</p>
-                <img className="App-intro, App-avatar" src={this.state.pic} alt={this.state.pic}/>
+                <img className="App-intro, App-avatar" src={this.state.pic} alt="avatar"/>
                 <br/>
-                <button onClick={this.queryGitAPIUser}>Query Git API</button>
+                <button id='getProfile' onClick={this.queryGitAPIUser}>Query Git API</button>
             </div>
         );
     }
