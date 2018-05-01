@@ -1,0 +1,22 @@
+{
+  "name": "git-convert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "react-scripts test --env=jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/benjaminvinicky/isit322-vinicky-2018.git"
+  },
+  "author": "Benjamin Vinicky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjaminvinicky/isit322-vinicky-2018/issues"
+  },
+  "homepage": "https://github.com/benjaminvinicky/isit322-vinicky-2018#readme",
+  "dependencies": {
+    "debug": "^3.1.0"
+  }
+}
