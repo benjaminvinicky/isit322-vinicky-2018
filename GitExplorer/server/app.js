@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 var api = require('./routes/api');
+var youRang = require('./routes/qux');
 
 
 // view engine setup
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/you-rang', youRang);
 
 // catch 404 and forward to error handler
 app.use('/api', api);

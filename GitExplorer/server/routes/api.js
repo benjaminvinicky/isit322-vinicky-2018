@@ -9,12 +9,6 @@ router.get('/foo', function(request, response) {
     response.send(message);
 });
 
-router.get('/bar', function(request, response) {
-    var message = { 'youRang': 'Hello' };
-    console.log('Foo called:\n' + JSON.stringify(message, null, 4));
-    response.send(message);
-});
-
 router.get('/user', function(req, res, next) {
     const options = {
         url: 'https://api.github.com/users/benjaminvinicky',

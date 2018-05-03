@@ -12,13 +12,13 @@ class Micro1 extends Component {
 
     queryMicroYouRang = () => {
         const that = this;
-        fetch('/api/bar')
+        fetch('http://localhost:30027/you-rang')
             .then(function(response) {
                 return response.json();
             })
             .then(function(json) {
                 console.log('parsed json', json);
-                that.setState((json));
+                that.setState(json);
             })
             .catch(function(ex) {
                 console.log('parsing failed, URL bad, network down, or similar', ex);
