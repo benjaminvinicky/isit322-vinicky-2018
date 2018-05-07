@@ -13,7 +13,7 @@ class GitUser extends Component {
 
     queryGitAPIUser = () => {
         const that = this;
-        fetch('/api/user')
+        fetch('/api/git-user')
             .then(function (response) {
                 return response.json();
             })

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../Components/App';
+import App from '../Components/ApiFoo';
 import AppInit from '../app-init';
 import ElfDebugEnzyme from '../ElfDebugEnzyme';
 import { configure, shallow } from 'enzyme';

@@ -1,40 +1,23 @@
 import React, {Component} from 'react';
-import '../css/App.css';
-import 'whatwg-fetch';
+import '../css/index.css';
+import ApiFoo from './ApiFoo';
+import Micros from './Micro1';
+import appInit from '../app-init';
+import UndeadHeader from './UndeadHeader';
+import GitUser from './GitUser';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            file: props.appInit.file,
-            status: props.appInit.status,
-            result: props.appInit.result
-        };
-    }
-
-    queryServer = () => {
-        const that = this;
-        fetch('/api/foo')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (json) {
-                console.log('parsed json', json);
-                that.setState((json));
-            })
-            .catch(function (ex) {
-                console.log('parsing failed, URL bad, network down, or similar', ex);
-            });
-    };
-
     render() {
         return (
-            <div className="App">
-                <p className="App-intro">state: {this.state.result}</p>
-                <p className="App-intro">file: {this.state.file}</p>
-                <p className="App-intro">status: {this.state.status}</p>
-                <button id='queryServer' onClick={this.queryServer}>Query API</button>
-            </div>
+            <BrowserRouter>
+                <div className = 'App'>
+                    <UndeadHeader />
+                    <Route exact path='/api/' render={(props) => <GitUser {...props} appInit={appInit}/>} />
+                    <Route exact path='/api/foo' render={(props) => <ApiFoo {...props} appInit={appInit}/>} />
+                    <Route exact path='/you-rang' render={(props) => <Micros {...props} appInit={appInit}/>} />
+                </div>
+            </BrowserRouter>
         );
     }
 }

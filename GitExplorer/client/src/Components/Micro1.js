@@ -2,18 +2,21 @@ import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
 
+
 class Micro1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            youRang: props.appInit.youRang
+            result: props.appInit.result,
+            message: props.appInit.message
         };
     }
 
     queryMicroYouRang = () => {
         const that = this;
-        fetch('http://localhost:30027/you-rang')
+        fetch('/api/you-rang')
             .then(function(response) {
+                console.log(response);
                 return response.json();
             })
             .then(function(json) {
@@ -28,7 +31,8 @@ class Micro1 extends Component {
     render() {
         return (
             <div className="App">
-                <p className="App-intro">You Rang: {this.state.youRang}</p>
+                <p className="App-intro">You Rang: {this.state.result}</p>
+                <p className="App-intro">Message: {this.state.message}</p>
                 <button id='callButton' onClick={this.queryMicroYouRang}>Query Micro</button>
             </div>
         );

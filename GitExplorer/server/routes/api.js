@@ -1,31 +1,26 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
 
-/* Set up a route called foo. */
+const requester = require('request');
+
+router.get('/you-rang', function(request, response, next) {
+    requester('http://localhost:30027/you-rang').pipe(response)
+});
+
+/*router.get('/you-rang', function(request, response) {
+    let callerResponse = { 'result': 'success', 'message': 'I am up and running' };
+    console.log('Foo called:\n' + JSON.stringify(callerResponse, null, 4)) + ' at qux';
+    response.send(callerResponse);
+});*/
+
 router.get('/foo', function(request, response) {
     var message = { 'status': 'success', 'result': 'bar', 'file': 'api.js' };
     console.log('Foo called:\n' + JSON.stringify(message, null, 4));
     response.send(message);
 });
 
-router.get('/user', function(req, res, next) {
-    const options = {
-        url: 'https://api.github.com/users/benjaminvinicky',
-        headers: {
-            'User-Agent': 'request'
-        }
-    };
-
-    request(options, function(error, response, body) {
-        console.log('error:', error);
-        console.log('statusCode:', response && response.statusCode);
-        console.log('body:', body);
-        const jsonBody = JSON.parse(body);
-        console.log('body:', JSON.stringify(body, null, 4));
-        res.send({error: error, response: response, body: jsonBody});
-    });
-
+router.get('/git-user', function(request, response, next) {
+    requester('http://localhost:30028/git-user').pipe(response)
 });
 
 module.exports = router;
