@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
-
 
 class Micro1 extends Component {
     constructor(props) {
@@ -24,7 +23,10 @@ class Micro1 extends Component {
                 that.setState(json);
             })
             .catch(function(ex) {
-                console.log('parsing failed, URL bad, network down, or similar', ex);
+                console.log(
+                    'parsing failed, URL bad, network down, or similar',
+                    ex
+                );
             });
     };
 
@@ -33,7 +35,9 @@ class Micro1 extends Component {
             <div className="App">
                 <p className="App-intro">You Rang: {this.state.result}</p>
                 <p className="App-intro">Message: {this.state.message}</p>
-                <button id='callButton' onClick={this.queryMicroYouRang}>Query Micro</button>
+                <button id="callButton" onClick={this.queryMicroYouRang}>
+                    Query Micro
+                </button>
             </div>
         );
     }
