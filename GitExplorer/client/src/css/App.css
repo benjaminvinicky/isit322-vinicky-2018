@@ -4,12 +4,12 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 100px;
 }
 
 .App-header {
-  background-color: #ff0f;
-  height: 150px;
+  background-color: darkturquoise;
+  height: 136px;
   padding: 20px;
   color: darkslategray;
 }
@@ -29,6 +29,6 @@
 
 .App-avatar {
   alignment: center;
-  height: 128px;
-  width: 128px;
+  height: 168px;
+  width: 168px;
 }

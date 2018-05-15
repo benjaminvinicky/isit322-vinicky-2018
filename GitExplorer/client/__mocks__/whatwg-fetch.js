@@ -1,11 +1,10 @@
 import getData from './mock-data';
 
-'use strict';
+('use strict');
 
 const whatwgFetch = jest.genMockFromModule('whatwg-fetch');
 
 let fetch = function(url) {
-
     let objectState = getData(url);
 
     let response = {};
@@ -22,9 +21,7 @@ let fetch = function(url) {
                     //func(JSON.stringify(stater));
                     func(objectState);
                     return {
-                        catch: function() {
-
-                        }
+                        catch: function() {}
                     };
                 }
             };

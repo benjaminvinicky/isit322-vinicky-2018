@@ -1,6 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
+import { red500 } from 'material-ui/styles/colors';
 
 class GitUser extends Component {
     constructor(props) {
@@ -14,15 +17,21 @@ class GitUser extends Component {
     queryGitAPIUser = () => {
         const that = this;
         fetch('/api/git-user')
-            .then(function (response) {
+            .then(function(response) {
                 return response.json();
             })
-            .then(function (json) {
+            .then(function(json) {
                 console.log('parsed json', json.body);
-                that.setState({name: json.body.name, pic: json.body.avatar_url});
+                that.setState({
+                    name: json.body.name,
+                    pic: json.body.avatar_url
+                });
             })
-            .catch(function (ex) {
-                console.log('parsing failed, URL bad, network down, or similar', ex);
+            .catch(function(ex) {
+                console.log(
+                    'parsing failed, URL bad, network down, or similar',
+                    ex
+                );
             });
     };
 
@@ -30,9 +39,24 @@ class GitUser extends Component {
         return (
             <div className="App">
                 <p className="App-intro">Login: {this.state.name}</p>
-                <img className="App-intro, App-avatar" src={this.state.pic} alt="avatar"/>
-                <br/>
-                <button id='getProfile' onClick={this.queryGitAPIUser}>Query Git API</button>
+                <img
+                    className="App-intro, App-avatar"
+                    src={this.state.pic}
+                    alt="avatar"
+                />
+                <br />
+                <RaisedButton
+                    label="Query git api"
+                    onClick={this.queryGitAPIUser}
+                    icon={
+                        <FontIcon
+                            className="muidocs-icon-action-android"
+                            color={red500}
+                        />
+                    }
+                    labelPosition="after"
+                    primary={true}
+                />
             </div>
         );
     }
