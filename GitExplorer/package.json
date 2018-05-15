@@ -9,9 +9,14 @@
     "material-ui": "^0.20.0"
   },
   "scripts": {
-    "start": "concurrently 'npm run server' 'npm run client'",
+    "start": "concurrently 'npm run server' 'npm run client' 'npm run qux' 'npm run gist' 'npm run gitUser' 'npm run git-socket' 'npm run markdown'",
     "server": "babel-node server/bin/www",
     "client": "babel-node start-client.js",
+    "qux": "babel-node ../micros/quxMicro/bin/www",
+    "gist": "babel-node ../micros/gistMicro/bin/www",
+    "gitUser": "babel-node ../micros/gitUserMicro/bin/www",
+    "git-socket": "babel-node ../micros/git-socketMicro/bin/www",
+    "markdown": "babel-node ../micros/markdownMicro/bin/www",
     "lint": "eslint ."
   },
   "devDependencies": {
