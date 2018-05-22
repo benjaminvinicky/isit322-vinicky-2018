@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) { 'use strict';
-  res.render('index', { title: 'Micro1' });
+  res.send('QuxMicro Called and Responded!');
 });
 
 router.get('/bar', function(req,res) {

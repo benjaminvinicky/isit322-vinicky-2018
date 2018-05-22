@@ -3,7 +3,7 @@ import '../css/App.css';
 import 'whatwg-fetch';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
-import { red500 } from 'material-ui/styles/colors';
+import { yellow500 } from 'material-ui/styles/colors';
 
 class GitUser extends Component {
     constructor(props) {
@@ -48,12 +48,9 @@ class GitUser extends Component {
                 <RaisedButton
                     label="Query git api"
                     onClick={this.queryGitAPIUser}
-                    icon={
-                        <FontIcon
-                            className="muidocs-icon-action-android"
-                            color={red500}
-                        />
-                    }
+                    icon={<FontIcon
+                    className="material-icons"
+                    color={yellow500}>android</FontIcon>}
                     labelPosition="after"
                     primary={true}
                 />
