@@ -1,0 +1,12 @@
+[Service]
+ExecStart=/usr/bin/node /home/ubuntu/bin/git-socketMicro/bin/www
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=undead-site
+User=ubuntu
+Group=ubuntu
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
