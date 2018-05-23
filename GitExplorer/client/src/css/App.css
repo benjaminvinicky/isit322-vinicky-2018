@@ -4,7 +4,7 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 100px;
+  height: 75px;
 }
 
 .App-header {
@@ -28,7 +28,8 @@
 }
 
 .App-avatar {
-  alignment: center;
-  height: 168px;
-  width: 168px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: solid yellow 3px;
 }

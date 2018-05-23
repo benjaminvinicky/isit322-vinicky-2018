@@ -50,7 +50,7 @@ class UndeadHeader extends Component {
                 </Drawer>
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h1>Welcome to RestBasics Revamped</h1>
+                    <h1>GitHub Explorer</h1>
                 </header>
             </div>
         );
