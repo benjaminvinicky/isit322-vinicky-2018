@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
+import styles from './undead-styles';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
+import { yellow500 } from 'material-ui/styles/colors';
 
 class ApiFoo extends Component {
     constructor(props) {
@@ -36,9 +40,17 @@ class ApiFoo extends Component {
                 <p className="App-intro">state: {this.state.result}</p>
                 <p className="App-intro">file: {this.state.file}</p>
                 <p className="App-intro">status: {this.state.status}</p>
-                <button id="queryServer" onClick={this.queryServer}>
-                    Query API
-                </button>
+                <RaisedButton
+                    id="queryServer"
+                    label="Query API"
+                    labelPosition="after"
+                    icon={<FontIcon
+                    className="material-icons"
+                    color={yellow500}>android</FontIcon>}
+                    primary={true}
+                    style={styles.button}
+                    onClick={this.queryServer}
+                />
             </div>
         );
     }

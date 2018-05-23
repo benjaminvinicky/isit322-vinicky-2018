@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require('request');
 
 router.get('/', function(req, res, next) { 'use strict';
-    res.render('index', { title: 'Micro1' });
+    res.send('git-User called and responded!');
 });
 
 router.get('/git-user', function(req, res, next) {
