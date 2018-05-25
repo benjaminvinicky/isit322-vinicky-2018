@@ -4,8 +4,12 @@ import 'whatwg-fetch';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import { yellow500 } from 'material-ui/styles/colors';
+import PropTypes from 'prop-types';
 
 class GitUser extends Component {
+    static propTypes = {
+        appInit: PropTypes.object.isRequired
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -48,9 +52,11 @@ class GitUser extends Component {
                 <RaisedButton
                     label="Query git api"
                     onClick={this.queryGitAPIUser}
-                    icon={<FontIcon
-                    className="material-icons"
-                    color={yellow500}>android</FontIcon>}
+                    icon={
+                        <FontIcon className="material-icons" color={yellow500}>
+                            android
+                        </FontIcon>
+                    }
                     labelPosition="after"
                     primary={true}
                 />

@@ -25,7 +25,6 @@ describe('jest test', function() {
             wrapper.update();
             elfDebugEnzyme.getFirst(wrapper, 'p');
             expect(wrapper.contains(callMe)).toBe(true);
-            done();
         }, 1);
     });
 });

@@ -24,7 +24,6 @@ describe('jest test', function() {
             wrapper.update();
             elfDebugEnzyme.getFirst(wrapper, 'p');
             expect(wrapper.contains(login)).toBe(true);
-            done();
         }, 1);
     });
 
@@ -38,7 +37,6 @@ describe('jest test', function() {
             wrapper.update();
             elfDebugEnzyme.getFirst(wrapper, 'p');
             expect(wrapper.contains(picture)).toBe(true);
-            done();
         }, 1);
     });
 });

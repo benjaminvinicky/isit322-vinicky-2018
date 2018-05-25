@@ -5,7 +5,6 @@ import AppInit from '../app-init';
 import ElfDebugEnzyme from '../ElfDebugEnzyme';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import GitUser from '../Components/GitUser';
 configure({ adapter: new Adapter() });
 
 const elfDebugEnzyme = new ElfDebugEnzyme(true, 'App.test.js');
@@ -27,7 +26,6 @@ describe('jest test', function() {
             wrapper.update();
             elfDebugEnzyme.getFirst(wrapper, 'p');
             expect(wrapper.contains(statusParagraph)).toBe(true);
-            done();
         }, 1);
     });
 });

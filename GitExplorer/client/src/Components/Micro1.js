@@ -5,9 +5,12 @@ import styles from './undead-styles';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import { yellow500 } from 'material-ui/styles/colors';
-
+import PropTypes from 'prop-types';
 
 class Micro1 extends Component {
+    static propTypes = {
+        appInit: PropTypes.object.isRequired
+    };
     constructor(props) {
         super(props);
         this.state = {
@@ -44,9 +47,11 @@ class Micro1 extends Component {
                     id="callButton"
                     label="Query Micro"
                     labelPosition="after"
-                    icon={<FontIcon
-                    className="material-icons"
-                    color={yellow500}>android</FontIcon>}
+                    icon={
+                        <FontIcon className="material-icons" color={yellow500}>
+                            android
+                        </FontIcon>
+                    }
                     primary={true}
                     style={styles.button}
                     onClick={this.queryMicroYouRang}
