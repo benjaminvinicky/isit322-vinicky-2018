@@ -15,7 +15,7 @@
  * you see the output from only that method. For instance, the true in the call to getLast
  * overrides the false in the constructor:
  *
- *   const elfDebugEnzyme = new ElfDebugEnzyme(false, 'App.test.js');
+ *   const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ApiFoo.test.js');
  *
  *   it('renders and reads H1 text', () => {
  *      const wrapper = shallow(<App />);

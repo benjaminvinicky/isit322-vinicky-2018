@@ -22,7 +22,6 @@ class UndeadHeader extends Component {
         return (
             <div className="App">
                 <AppBar
-                    title="GitExplorer"
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     onLeftIconButtonClick={this.handleToggle}
                 />
@@ -33,8 +32,13 @@ class UndeadHeader extends Component {
                     onRequestChange={this.handleToggle}
                 >
                     <MenuItem
-                        primaryText="Git User"
+                        primaryText="Git Home"
                         containerElement={<Link to="/api" />}
+                        onClick={this.handleToggle}
+                    />
+                    <MenuItem
+                        primaryText="View Gists"
+                        containerElement={<Link to="/gists" />}
                         onClick={this.handleToggle}
                     />
                     <MenuItem
@@ -56,5 +60,7 @@ class UndeadHeader extends Component {
         );
     }
 }
+
+
 
 export default UndeadHeader;

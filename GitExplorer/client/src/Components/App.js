@@ -9,6 +9,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import ShowNewGist from './ShowNewGist';
 
 class App extends Component {
     render() {
@@ -29,6 +30,13 @@ class App extends Component {
                             path="/api/foo"
                             render={props => (
                                 <ApiFoo {...props} appInit={appInit} />
+                            )}
+                        />
+                        <Route
+                            exact
+                            path="/gists"
+                            render={props => (
+                                <ShowNewGist {...props} appInit={appInit} />
                             )}
                         />
                         <Route

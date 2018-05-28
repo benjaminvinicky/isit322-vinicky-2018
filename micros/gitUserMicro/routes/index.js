@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-router.get('/', function(req, res, next) { 'use strict';
+router.get('/', function(req, res) { 'use strict';
     res.send('git-User called and responded!');
 });
 
-router.get('/git-user', function(req, res, next) {
+router.get('/git-user', function(req, res) {
     const options = {
         url: 'https://api.github.com/users/benjaminvinicky',
         headers: {
