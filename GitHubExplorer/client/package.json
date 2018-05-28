@@ -1,0 +1,32 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:30026",
+  "dependencies": {
+    "enzyme-react-16-adapter-setup": "^0.1.0",
+    "material-ui": "^0.20.0",
+    "prettier": "^1.12.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "request": "^2.85.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "bower": "^1.8.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "jest-fetch-mock": "^1.5.0",
+    "react-test-renderer": "^16.3.2"
+  }
+}
