@@ -1,13 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import UndeadHeader from '../Components/UndeadHeader';
 import logo from '../images/Tree.svg';
-import ElfDebugEnzyme from '../ElfDebugEnzyme';
+//import ElfDebugEnzyme from '../ElfDebugEnzyme';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import 'material-ui';
 
-const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ApiFoo.test.js');
+//const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ApiFoo.test.js');
 
 configure({ adapter: new Adapter() });
 
