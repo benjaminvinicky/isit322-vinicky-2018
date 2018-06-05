@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
-import logo from '../images/Tree.svg';
 import '../css/App.css';
 import '../css/UndeadHeader.css';
 import 'whatwg-fetch';
-import { Link } from 'react-router-dom';
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
+import AppBar from '@material-ui/core/AppBar';
+import Drawer from '@material-ui/core/Drawer';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import MenuIcon from '@material-ui/icons/Menu';
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import { gitItems, demoItems } from './tileData';
+
+
+const styles = {
+    root: {
+        flexGrow: 1
+    },
+    flex: {
+        flex: 1
+    },
+};
+
 
 class UndeadHeader extends Component {
     constructor(props) {
@@ -19,6 +36,55 @@ class UndeadHeader extends Component {
     handleToggle = () => this.setState({ open: !this.state.open });
 
     render() {
+        const { classes } = this.props;
+        const sideList = (
+            <div className={classes.list}>
+                <List>{gitItems}</List>
+                <Divider />
+                <List>{demoItems}</List>
+            </div>
+        );
+        return (
+            <div>
+                <AppBar
+                    position="static"
+                >
+                    <Toolbar>
+                        <IconButton
+                            className={classes.menuButton}
+                            color="inherit"
+                            aria-label="Menu"
+                            onClick={this.handleToggle}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                        <Typography variant="title" color="inherit" className={classes.flex}>
+                            GitExplorer
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <Drawer open={this.state.open} onClose={this.handleToggle}>
+                    <div
+                        role="button"
+                        onClick={this.handleToggle}
+                        onKeyDown={this.handleToggle}
+                    >
+                        {sideList}
+                    </div>
+                </Drawer>
+
+            </div>
+        );
+    }
+}
+
+UndeadHeader.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(UndeadHeader);
+
+    /*render() {
         return (
             <div className="App">
                 <AppBar
@@ -63,4 +129,4 @@ class UndeadHeader extends Component {
 
 
 
-export default UndeadHeader;
+export default UndeadHeader;*/

@@ -5,7 +5,7 @@ import logo from '../images/Tree.svg';
 //import ElfDebugEnzyme from '../ElfDebugEnzyme';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import 'material-ui';
+import '@material-ui/core';
 
 //const elfDebugEnzyme = new ElfDebugEnzyme(false, 'ApiFoo.test.js');
 

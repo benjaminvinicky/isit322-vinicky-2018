@@ -6,15 +6,21 @@ import appInit from '../app-init';
 import UndeadHeader from './UndeadHeader';
 import GitUser from './GitUser';
 import { BrowserRouter, Route } from 'react-router-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import ShowNewGist from './ShowNewGist';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const themeDark = createMuiTheme({
+    palette: {
+        type: 'dark'
+    }
+});
 
 class App extends Component {
+
+
     render() {
         return (
-            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+            <MuiThemeProvider theme={themeDark}>
                 <BrowserRouter>
                     <div className="App">
                         <UndeadHeader />

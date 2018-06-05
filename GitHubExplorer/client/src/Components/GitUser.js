@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
-import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
-import {yellow500} from 'material-ui/styles/colors';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 import PropTypes from 'prop-types';
 
 class GitUser extends Component {
@@ -62,18 +61,14 @@ class GitUser extends Component {
                 <p className="App-intro">Account Page: <a href={this.state.url}target='blank'>{this.state.url}</a></p>
                 <p className="App-intro">Location: {this.state.location}</p>
                 <p className="App-intro">Company: {this.state.company}</p>
-                <RaisedButton
+                <Button
                     id='getProfile'
-                    label="Query git api"
                     onClick={this.queryGitAPIUser}
-                    icon={
-                        <FontIcon className="material-icons" color={yellow500}>
-                            android
-                        </FontIcon>
-                    }
-                    labelPosition="after"
-                    primary={true}
-                />
+                    color='primary'
+                    variant='raised'
+                >
+                    <Icon>android</Icon>Query Git API
+                </Button>
             </div>
         );
     }

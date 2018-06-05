@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
-import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
-import {yellow500} from 'material-ui/styles/colors';
+import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
+import Icon from '@material-ui/core/Icon';
 
 class ShowNewGist extends Component {
     static propTypes = {
@@ -64,29 +63,23 @@ class ShowNewGist extends Component {
         return (
             <div className="App">
                 <br/>
-                <RaisedButton
+                <Button
                     label="Last Gist"
                     onClick={this.previousGist}
-                    icon={
-                        <FontIcon className="material-icons" color={yellow500}>
-                            navigate_before
-                        </FontIcon>
-                    }
                     labelPosition="after"
                     primary={true}
-                />
-                <RaisedButton
+                >
+                    <Icon>arrow_back</Icon>
+                </Button>
+                <Button
                     id="nextGist"
                     label="Next Gist"
                     onClick={this.nextGist}
-                    icon={
-                        <FontIcon className="material-icons" color={yellow500}>
-                            navigate_next
-                        </FontIcon>
-                    }
                     labelPosition="before"
                     primary={true}
-                />
+                >
+                    <Icon>arrow_back</Icon>
+                </Button>
                 <hr />
                 <img
                     className="App-intro, App-avatar"
@@ -99,18 +92,14 @@ class ShowNewGist extends Component {
                 <p>Description: {this.state.gists[this.state.index].description}</p>
                 <p>Gist Link: <a href={this.state.gists[this.state.index].htmlUrl} target='blank'>Here</a></p>
                 <hr />
-                <RaisedButton
+                <Button
                     id="fetchGists"
                     label="Fetch Gists"
                     onClick={this.fetchGistList}
-                    icon={
-                        <FontIcon className="material-icons" color={yellow500}>
-                            android
-                        </FontIcon>
-                    }
                     labelPosition="after"
                     primary={true}
-                />
+                ><Icon>arrow_back</Icon>
+                </Button>
             </div>
         );
     }

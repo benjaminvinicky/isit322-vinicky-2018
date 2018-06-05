@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
 import styles from './undead-styles';
-import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
-import { yellow500 } from 'material-ui/styles/colors';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 import PropTypes from 'prop-types';
 
 class ApiFoo extends Component {
@@ -44,19 +43,16 @@ class ApiFoo extends Component {
                 <p className="App-intro">state: {this.state.result}</p>
                 <p className="App-intro">file: {this.state.file}</p>
                 <p className="App-intro">status: {this.state.status}</p>
-                <RaisedButton
+                <Button
                     id="queryServer"
                     label="Query API"
                     labelPosition="after"
-                    icon={
-                        <FontIcon className="material-icons" color={yellow500}>
-                            android
-                        </FontIcon>
-                    }
                     primary={true}
                     style={styles.button}
                     onClick={this.queryServer}
-                />
+                >
+                    <Icon>arrow_back</Icon>
+                </Button>
             </div>
         );
     }
