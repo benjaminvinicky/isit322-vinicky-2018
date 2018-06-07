@@ -67,7 +67,7 @@ class GitUser extends Component {
                     color='primary'
                     variant='raised'
                 >
-                    <Icon>android</Icon>Query Git API
+                    <Icon>android</Icon> Query Git API
                 </Button>
             </div>
         );

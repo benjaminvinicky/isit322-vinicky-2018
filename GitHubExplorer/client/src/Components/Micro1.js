@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
-import styles from './undead-styles';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import PropTypes from 'prop-types';
@@ -44,13 +43,11 @@ class Micro1 extends Component {
                 <p className="App-intro">Message: {this.state.message}</p>
                 <Button
                     id="callButton"
-                    label="Query Micro"
-                    labelPosition="after"
-                    primary={true}
-                    style={styles.button}
+                    color='primary'
+                    variant='raised'
                     onClick={this.queryMicroYouRang}
                 >
-                    <Icon>arrow_back</Icon>
+                    <Icon>android</Icon> Query Micro
                 </Button>
             </div>
         );

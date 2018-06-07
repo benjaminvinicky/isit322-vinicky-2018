@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
 import 'whatwg-fetch';
-import styles from './undead-styles';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import PropTypes from 'prop-types';
@@ -45,13 +44,11 @@ class ApiFoo extends Component {
                 <p className="App-intro">status: {this.state.status}</p>
                 <Button
                     id="queryServer"
-                    label="Query API"
-                    labelPosition="after"
-                    primary={true}
-                    style={styles.button}
+                    color='primary'
+                    variant='raised'
                     onClick={this.queryServer}
                 >
-                    <Icon>arrow_back</Icon>
+                    <Icon>android</Icon> Query Server
                 </Button>
             </div>
         );

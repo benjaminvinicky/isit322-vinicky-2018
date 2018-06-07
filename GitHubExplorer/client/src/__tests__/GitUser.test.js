@@ -1,22 +1,35 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import GitUser from '../Components/GitUser';
-import appInit from '../app-init';
-//import ElfDebugEnzyme from '../ElfDebugEnzyme';
 import { configure, shallow } from 'enzyme';
+import appInit from '../app-init';
 import Adapter from 'enzyme-adapter-react-16';
+import ReactDOM from 'react-dom';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { BrowserRouter } from 'react-router-dom';
+import {createMuiTheme} from '@material-ui/core/styles/index';
 
-//const elfDebugEnzyme = new ElfDebugEnzyme(false, 'App.test.js');
+const themeDark = createMuiTheme({
+    palette: {
+        type: 'dark'
+    }
+});
 
 configure({ adapter: new Adapter() });
 
 describe('jest test', function() {
 
-    /*fit('renders without crashing', () => {
+    it('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(shallow(<GitUser appInit={appInit} />), div);
+        ReactDOM.render(
+            <MuiThemeProvider theme={themeDark}>
+                <BrowserRouter>
+                    <GitUser appInit={appInit}/>
+                </BrowserRouter>
+            </MuiThemeProvider>,
+            div
+        );
         ReactDOM.unmountComponentAtNode(div);
-    });*/
+    });
 
     it('renders login Name after button click', () => {
         const wrapper = shallow(<GitUser appInit={appInit} />);

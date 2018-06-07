@@ -58,27 +58,25 @@ class ShowNewGist extends Component {
 
     };
 
-
     render() {
         return (
             <div className="App">
                 <br/>
                 <Button
-                    label="Last Gist"
+                    id='lastGist'
                     onClick={this.previousGist}
-                    labelPosition="after"
-                    primary={true}
+                    color='primary'
+                    variant='raised'
                 >
                     <Icon>arrow_back</Icon>
                 </Button>
                 <Button
-                    id="nextGist"
-                    label="Next Gist"
+                    id='nextGist'
                     onClick={this.nextGist}
-                    labelPosition="before"
-                    primary={true}
+                    color='primary'
+                    variant='raised'
                 >
-                    <Icon>arrow_back</Icon>
+                    <Icon>arrow_forward</Icon>
                 </Button>
                 <hr />
                 <img
@@ -94,11 +92,10 @@ class ShowNewGist extends Component {
                 <hr />
                 <Button
                     id="fetchGists"
-                    label="Fetch Gists"
                     onClick={this.fetchGistList}
-                    labelPosition="after"
-                    primary={true}
-                ><Icon>arrow_back</Icon>
+                    color='primary'
+                    variant='raised'
+                ><Icon>android</Icon> Get Gists
                 </Button>
             </div>
         );
