@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-
+import AddressEdit from './AddressEdit';
 
 const styles = theme => ({
     button: {
@@ -62,6 +62,15 @@ class AddressShow extends Component {
 
     render() {
         const {classes} = this.props;
+        const editDialog = this.state.editOpen ? (
+            <AddressEdit
+                address={this.props.name}
+                open={this.state.editOpen}
+                addressEdit={this.addressEdit}
+            />
+        ) : (
+            <div/>
+        );
 
         return (
             <div className={classes.container}>
@@ -113,6 +122,14 @@ class AddressShow extends Component {
                         >
                             Delete
                         </Button>
+                        <Button
+                            color="secondary"
+                            variant="raised"
+                            onClick={() => this.setState({editOpen: true})}
+                        >
+                            Edit
+                        </Button>
+                        {editDialog}
                     </div>
                 </Paper>
             </div>
