@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function banner {
+    echo ' '
+    echo ===============================
+    echo --- "$1" ---
+    echo ===============================
+}
+
+function show {
+    banner "$1"
+    sudo systemctl show -p ActiveState -p SubState -p Environment $2
+}
+
+show 'GitHubExplorer' undead-site.service
+show 'Git-Socket Miro' undead-site-git-socket.service
+show 'Markdown Micro' undead-site-markdown.service
+show 'Qux Micro' undead-site-qux.service
+show 'Gists Micro' undead-site-gist.service
+show 'GitUser Micro' undead-site-gitUser.service
