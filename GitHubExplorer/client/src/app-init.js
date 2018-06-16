@@ -15,6 +15,7 @@ var appInit = {
         {
             htmlUrl: 'unknown',
             id: 'unknown',
+            gitPullUrl: 'unknown',
             description: 'unknown',
             ownerLogin: 'unknown',
             avatarUrl: flux,
@@ -23,6 +24,7 @@ var appInit = {
         {
             htmlUrl: 'test',
             id: 'test',
+            gitPullUrl: 'test',
             description: 'test',
             ownerLogin: 'test',
             avatarUrl: flux,
@@ -30,7 +32,8 @@ var appInit = {
         }
     ],
     index: 0,
-    count: 2
+    count: 2,
+    dbLoaded: false
 };
 
 export default appInit;

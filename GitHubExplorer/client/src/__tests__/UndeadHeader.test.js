@@ -1,6 +1,5 @@
 import React from 'react';
 import UndeadHeader from '../Components/UndeadHeader';
-import logo from '../images/Tree.svg';
 import { configure, shallow } from 'enzyme';
 import '@material-ui/core';
 import appInit from '../app-init';

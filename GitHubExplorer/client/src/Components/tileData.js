@@ -37,6 +37,15 @@ export const gitItems = (
             </ListItemIcon>
             <ListItemText primary="Gist Lister"/>
         </ListItem>
+        <ListItem
+            button
+            component={Link}
+            to="/gistDB">
+            <ListItemIcon>
+                <SendIcon/>
+            </ListItemIcon>
+            <ListItemText primary="GistDB Initializer"/>
+        </ListItem>
     </div>
 );
 

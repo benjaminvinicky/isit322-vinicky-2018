@@ -36,7 +36,7 @@ class App extends Component {
                         <Route id="home" exact path="/" component={Home} />
                         <Route
                             id="address"
-                            path="/address"
+                            path="/address-list"
                             render={props => (
                                 <Address {...props} dataManager={dataManager} />
                             )}

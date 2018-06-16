@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowNewGist from '../Components/ShowNewGist';
+import GistLister from '../Components/GistLister';
 import appInit from '../app-init';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -22,7 +22,7 @@ describe('Show New Gist jest test', function() {
         ReactDOM.render(
             <MuiThemeProvider theme={themeDark}>
                 <BrowserRouter>
-                    <ShowNewGist appInit={appInit}/>
+                    <GistLister appInit={appInit}/>
                 </BrowserRouter>
             </MuiThemeProvider>,
             div
@@ -31,7 +31,7 @@ describe('Show New Gist jest test', function() {
     });
 
     it('renders getGist on button click', () => {
-        const wrapper = shallow(<ShowNewGist appInit={appInit}/>);
+        const wrapper = shallow(<GistLister appInit={appInit}/>);
         const Gists = <p>Description: This is another test gist</p>;
         wrapper.find('#fetchGists').simulate('click');
         setTimeout(() => {
@@ -42,14 +42,14 @@ describe('Show New Gist jest test', function() {
     });
 
     it('renders default description value', () => {
-        const wrapper = shallow(<ShowNewGist appInit={appInit}/>);
+        const wrapper = shallow(<GistLister appInit={appInit}/>);
         const callMe = <p>Description: unknown</p>;
         //elfDebugEnzyme.getFirst(wrapper, 'p');
         expect(wrapper.contains(callMe)).toBe(true);
     });
 
     it('renders secondary description value on next click', () => {
-        const wrapper = shallow(<ShowNewGist appInit={appInit}/>);
+        const wrapper = shallow(<GistLister appInit={appInit}/>);
         const Gists = <p>Description: test</p>;
         wrapper.find('#fetchGists').simulate('click');
         setTimeout(() => {

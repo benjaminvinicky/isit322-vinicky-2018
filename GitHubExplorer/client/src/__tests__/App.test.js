@@ -4,7 +4,6 @@ import App from '../Components/App';
 import appInit from '../app-init';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16/build/index';
-import ElfDebugEnzyme from '../ElfDebugEnzyme';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { BrowserRouter } from 'react-router-dom';
 import {createMuiTheme} from '@material-ui/core/styles/index';

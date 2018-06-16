@@ -22,6 +22,25 @@ const themePurple = createMuiTheme({
     },
 });
 
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit
+    },
+    container: {
+        flexGrow: 1,
+        textAlign: 'center'
+    },
+    rootBar: theme.mixins.gutters({
+        paddingTop: 16,
+        paddingBottom: 16,
+        paddingLeft: 8,
+        paddingRight: 8,
+        marginTop: theme.spacing.unit * 3,
+        marginLeft: theme.spacing.unit * 3,
+        marginRight: theme.spacing.unit * 3
+    }),
+});
+
 ReactDOM.render(
     <MuiThemeProvider theme={themePurple}>
         <App/>

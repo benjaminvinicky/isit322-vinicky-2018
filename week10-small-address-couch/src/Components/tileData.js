@@ -21,7 +21,7 @@ export const gitItems = (
         <ListItem
             button
             component={Link}
-            to="/address">
+            to="/address-list">
             <ListItemIcon>
                 <StarIcon/>
             </ListItemIcon>

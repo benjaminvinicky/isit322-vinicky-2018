@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#Cleanup
+
+function banner {
+    echo ' '
+    echo ==================================================
+    echo --- "$1" ---
+    echo ==================================================
+}
+
+function delete {
+    banner "$1"
+    rm -r client/build
+    rm -r server/public/*
+}
+
+function build {
+    banner "$1"
+    npm run build
+}
+
+function copyBuild {
+    banner "$1"
+    cp -r client/build/. server/public/.
+}
+
+function runApp {
+    banner "$1"
+    yarn start
+}
+
+delete "Cleaning up Build Folders/Content"
+build "Building Client"
+copyBuild "Copying build folder over to the client"
+runApp "Starting app using concurrently. Enjoy!"

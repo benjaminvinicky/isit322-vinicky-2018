@@ -11,6 +11,7 @@
     "start": "concurrently 'npm run server' 'npm run qux' 'npm run gist' 'npm run gitUser' 'npm run git-socket' 'npm run markdown'",
     "server": "babel-node server/bin/www",
     "qux": "babel-node ../micros/quxMicro/bin/www",
+    "build": "babel-node build-client",
     "gist": "babel-node ../micros/gistMicro/bin/www",
     "gitUser": "babel-node ../micros/gitUserMicro/bin/www",
     "git-socket": "babel-node ../micros/git-socketMicro/bin/www",
